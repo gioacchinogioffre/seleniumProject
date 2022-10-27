@@ -14,6 +14,7 @@ public class LoginPage
     protected By PasswordInput = By.Id("pass");
     protected By LogInButton = By.Id("loginButton");
 
+    // Contstructor. Throws an excepction if the page title is not correct.
     public LoginPage(IWebDriver driver)
     {
         Driver = driver;
@@ -38,6 +39,15 @@ public class LoginPage
     public void ClickLogInButton()
     {
         Driver.FindElement(LogInButton).Click();
+    }
+
+    // Method to log in. It returns the Employee Page
+    public EmployeePage LogInAs(string user, string password)
+    {
+        TypeUserName(user);
+        TypePassword(password);
+        ClickLogInButton();
+        return new EmployeePage(Driver);
     }
 
 }

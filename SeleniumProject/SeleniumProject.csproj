@@ -13,6 +13,7 @@
     <None Remove="Selenium.Support" />
     <None Remove="Selenium.Chrome.WebDriver" />
     <None Remove="PageObject\" />
+    <None Remove="Handler\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.13.3" />
@@ -23,5 +24,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PageObject\" />
+    <Folder Include="Handler\" />
   </ItemGroup>
 </Project>
