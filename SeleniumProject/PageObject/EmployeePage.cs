@@ -33,6 +33,7 @@ public class EmployeePage
         return WaitHandler.ElementIsPresent(Driver, Form);
     }
 
+    // Method to add employee
     public void AddEmployee(string name, string email, string address, string phone)
     {
         Driver.FindElement(NameInput).SendKeys(name);
@@ -42,7 +43,19 @@ public class EmployeePage
         Driver.FindElement(AddButton).Click();
     }
 
-    public bool
+    // Method to capture and accept an alert.
+    // Returns true if an alert is detected and accepted; else returns false.
+    public bool isSuccessAlertPresent()
+    {
+        try
+        {
+            Driver.SwitchTo().Alert().Accept();
+            return true;
+        }
+        catch (NoAlertPresentException) { }
+
+        return false;
+    }
 
 }
 
