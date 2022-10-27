@@ -7,10 +7,9 @@ using SeleniumProject.PageObject;
 namespace TestCases;
 
 [TestFixture]
-public class AddEmployeeTest
+public class AddEmployeeTest : BaseTest
 {
 
-    protected IWebDriver Driver;
 
     // PageObject for the employee form
     private EmployeePage employeePage;
@@ -18,8 +17,6 @@ public class AddEmployeeTest
     [SetUp]
     public void BeforeTest()
     {
-        Driver = new ChromeDriver();
-        Driver.Navigate().GoToUrl("https://www.testfaceclub.com/ejercicios/");
 
         LoginPage loginPage = new LoginPage(Driver);
         employeePage = loginPage.LogInAs("admin", "123");
@@ -32,13 +29,5 @@ public class AddEmployeeTest
         Assert.IsTrue(employeePage.isSuccessAlertPresent());
     }
 
-    [TearDown]
-    public void AfterTest()
-    {
-        if (Driver != null)
-        {
-            Driver.Quit();
-        }
-    }
 }
 

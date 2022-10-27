@@ -4,10 +4,9 @@ using SeleniumProject.Handler;
 
 namespace SeleniumProject.PageObject;
 
-public class EmployeePage
+public class EmployeePage : BasePage
 {
-    // Selenium Driver
-    protected IWebDriver Driver;
+
 
     // Contstructor. Throws an excepction if the page title is not correct.
     public EmployeePage(IWebDriver driver)

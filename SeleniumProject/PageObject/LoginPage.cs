@@ -4,10 +4,8 @@ using OpenQA.Selenium;
 
 namespace SeleniumProject.PageObject;
 
-public class LoginPage
+public class LoginPage : BasePage
 {
-    // Selenium Driver
-    protected IWebDriver Driver;
 
     // Localizadores. We need to identify the ID'S of the things we want to test on the website.
     protected By UserInput = By.Id("user");
