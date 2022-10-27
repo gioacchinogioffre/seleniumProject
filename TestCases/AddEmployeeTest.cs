@@ -22,10 +22,13 @@ public class AddEmployeeTest : BaseTest
         employeePage = loginPage.LogInAs("admin", "123");
     }
 
-    [Test]
-    public void SuccesfulAddEmployeeTest()
+    // NUnit notation to mark a method as an Automated Test Case with parameters.
+    // In this case, the case is gonna be tested twice.
+    [TestCase("jorge", "jorge@hotmail.com", "Av Siempreviva 123", "123455")]
+    [TestCase("juan", "juan@hotmail.com", "Av Siempreviva 3291", "981923812")]
+    public void SuccesfulAddEmployeeTest(string name, string email, string address, string phone)
     {
-        employeePage.AddEmployee("jorge", "jorge@hotmail.com", "Av. Siempreviva 123", "123456789");
+        employeePage.AddEmployee(name, email, address, phone);
         Assert.IsTrue(employeePage.isSuccessAlertPresent());
     }
 
